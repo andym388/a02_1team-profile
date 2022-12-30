@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/a02_1team-profile/static/css/main.d75b9e65.css",
+    "main.js": "/a02_1team-profile/static/js/main.d5053e6d.js",
+    "index.html": "/a02_1team-profile/index.html",
+    "main.d75b9e65.css.map": "/a02_1team-profile/static/css/main.d75b9e65.css.map",
+    "main.d5053e6d.js.map": "/a02_1team-profile/static/js/main.d5053e6d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d75b9e65.css",
+    "static/js/main.d5053e6d.js"
+  ]
+}
