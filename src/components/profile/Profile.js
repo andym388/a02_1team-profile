@@ -1,44 +1,53 @@
+/* Profile Component contains the Application Logic to:
+   - Fetch, format and display the user profile data onto the browser using scss and css files
+   - When your mouse hover over the trash icon, it turns red
+   - When you click on the trash icon beside each profile, it removes that person's profile from the list of profiles
+   - When you type out some Search Characters, it filters and display the matching Names
+*/
 import { useState } from "react";
 import "./Profile.scss";
 import { profileData } from "./profile-data";
-import { FaTrashAlt } from "react-icons/fa";
+import { FaSearch, FaTrashAlt } from "react-icons/fa";
 
 const Profile = () => {
-  const [userProfile, setUserProfile] = useState(profileData);
+  const [teamProfile, setTeamProfile] = useState(profileData);
   const [search, setSearch] = useState("");
+
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
 
   const removeProfile = (id) => {
     console.log(id);
-    const newProfileList = userProfile.filter((profile) => profile.id !== id);
-    setUserProfile(newProfileList);
-  };
-
-  const handleInputChange = (e) => {
-    setSearch(e.target.value);
+    const newProfileList = teamProfile.filter((profile) => profile.id !== id);
+    setTeamProfile(newProfileList);
   };
 
   return (
-    <section className="profile-sec --flex-center">
+    <section className="section --center-all profile-section">
+      <h2 className="--fw-bold --text-light">My Team Profile App</h2>
       <div className="container">
-        <h2 className="--text-light">Team Profile App</h2>
         <div className="--form-control">
-          <input
-            type="text"
-            placeholder="Enter search text..."
-            className="--width-100"
-            onChange={handleInputChange}
-            value={search}
-          />
+          <div>
+            <input
+              className="--width-92"
+              type="text"
+              placeholder="Enter search text ..."
+              value={search}
+              onChange={handleSearch}
+            />
+            &nbsp;
+            <FaSearch size={20} className="--bg-grey" />
+          </div>
         </div>
-        {userProfile
-          .filter((value) => {
+        {teamProfile
+          .filter((item) => {
             if (search === "") {
-              return value;
-            } else if (
-              value.name.toLowerCase().includes(search.toLowerCase())
-            ) {
-              return value;
+              return item;
+            } else if (item.name.toLowerCase().includes(search.toLowerCase())) {
+              return item;
             }
+            return false;
           })
           .map((profile) => (
             <div className="profile --card --flex-between" key={profile.id}>

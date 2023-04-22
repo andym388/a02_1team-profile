@@ -1,13 +1,13 @@
+// Use the Profile component to fetch and display profile data
 import React from "react";
-import "./App.scss";
 import Profile from "./components/profile/Profile";
 
-function App() {
+const App = () => {
   return (
     <div>
       <Profile />
     </div>
   );
-}
+};
 
 export default App;

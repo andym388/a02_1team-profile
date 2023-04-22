@@ -1,16 +1,16 @@
-.profile-sec {
-    background: var(--dark-blue);
+.profile-section {
+    background: rgb(8, 3, 46);
     min-height: 100vh;
 }
 
 .profile {
+    background: rgb(10, 24, 172);
     min-width: 350px;
     border: 1px solid #fff;
     margin-bottom: 1rem;
     img {
         width: 10rem;
         height: 7rem;
-        
     }
     .icon {
         color: #fff;
@@ -18,11 +18,5 @@
         &:hover {
             color: red;
         }
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .profile{
-        flex-direction: row;
     }
 }
